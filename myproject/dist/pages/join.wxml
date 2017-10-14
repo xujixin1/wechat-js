@@ -1,0 +1,28 @@
+
+  <!-- <view class="background">
+    <view class="be">
+      <view class="view works">
+        <view class="input">
+          <text class="text">作品名称:</text>
+          <input class="border"></input>
+        </view>
+        <view class="input">
+          <text class="text">作品概述:</text>
+          <input class="border"></input>
+        </view>
+        <view class="input">
+          <text class="text">拍摄感悟:</text>
+          <input class="border"></input>
+        </view>
+        <view class="book">
+          <view>
+            <image class="photo" src="{{book}}"></image>
+          </view>
+        </view>
+      </view>
+      <view class="button">
+        <button>上传作品</button>
+      </view>
+    </view>
+  </view> -->
+  <view class="background" style="height: {{height}}px;"/>

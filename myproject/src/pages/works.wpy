@@ -1,0 +1,23 @@
+<style>
+
+</style>
+
+<template>
+  
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Works extends wepy.page {
+  config = {
+    navigationBarTitleText: '首页'
+  }
+  data = {
+  }
+  methods = {
+    join() {
+    }
+  }
+  onLoad() { }
+}
+</script>

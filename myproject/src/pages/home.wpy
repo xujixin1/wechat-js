@@ -1,0 +1,49 @@
+<style>
+.sight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 35px;
+  width: 300px;
+  height: 480px;
+}
+
+.swiper {
+  display: flex;
+  width: 400px;
+  height: 500px;
+}
+
+.view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
+<template>
+  <view class="view">
+    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="300" circular="true">
+      <block wx:for="{{sight}}">
+        <swiper-item>
+          <image src="{{item}}" class="sight" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Home extends wepy.page {
+  config = {
+    navigationBarTitleText: '手机摄影大赛'
+  }
+  data = {
+    src: '',
+    sight: ['../image/sight.jpg', '../image/sea.jpg', '../image/beach.jpg', '../image/boat.jpg', '../image/night.jpg']
+  }
+  methods = {
+  }
+  onLoad() { }
+}
+</script>
