@@ -20,16 +20,17 @@ export default class extends wepy.app {
       'pages/join',
       'pages/works',
       'pages/mine',
+      'pages/about',
       'pages/index'
     ],
     window: {
       backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
+      navigationBarBackgroundColor: 'pink',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
     },
     tabBar: {
-      backgroundColor: '#F08080',
+      backgroundColor: '#ffc0cb',
       color: '#FFF8DC',
       selectedColor: '#000000',
       list: [{

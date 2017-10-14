@@ -1,0 +1,22 @@
+<style>
+
+</style>
+<template>
+  <view>
+    <text>主题内容:</text>
+    </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class About extends wepy.page {
+  config = {
+    navigationBarTitleText: '关于我们'
+  }
+  data = {
+  }
+  methods = {
+  }
+  onLoad() { }
+}
+</script>

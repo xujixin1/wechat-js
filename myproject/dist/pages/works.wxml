@@ -1,0 +1,10 @@
+
+  <view>
+    <view class="center">
+      <view class="input">
+        <input placeholder="搜索想要查看的作品">
+        </input>
+        <image class="border" src="{{search}}"/>
+      </view>
+    </view>
+  </view>

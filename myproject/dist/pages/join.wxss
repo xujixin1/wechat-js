@@ -1,62 +1,70 @@
 
-.button {
+.size {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: azure;
+  width: 45px;
+  height: 45px;
+  margin: 2.5px;
 }
 
 .view {
   display: flex;
-  width: 300px;
-  height: 450px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid gray;
 }
 
-.be {
+.left {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: azure;
-  height: 100%;
-}
-
-.works {
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
+  margin: 10px;
 }
 
 .text {
   display: flex;
-  padding: 10px;
+  margin-top: 10px;
+}
+
+.page {
+  display: flex;
+  margin: 0px 10px;
+  align-items: center;
+}
+
+.textarea {
+  display: flex;
+  height: 45px;
+  width: 250px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding-left: 10px;
 }
 
 .input {
   display: flex;
-}
-
-.border {
-  display: flex;
   border: 1px solid black;
-  border-radius: 50px;
-  margin-top: 5px;
+  width: 210px;
+  border-radius: 10px;
+  padding-left: 10px;
 }
 
-.book {
+.button {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 25px;
+}
+
+.center {
   display: flex;
-  /* margin-top: 30px; */
   justify-content: center;
 }
 
-.photo {
+.right {
   display: flex;
-  width: 200px;
-  height: 220px;
+  margin: 0px 10px;
 }
 
-.background {
-  background-color: aqua;
+.back {
+  background-image: url('https://img.25pp.com/uploadfile/bizhi/iphone6p/20150922/1442885200389924_390x690.jpg');
+  display: flex;
+  width: 400px;
+  height: 555px;
 }

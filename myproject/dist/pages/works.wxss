@@ -1,2 +1,19 @@
 
+.border {
+  width: 20px;
+  height: 25px;
+}
 
+.input {
+  display: flex;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 220px;
+  margin-top: 20px;
+  padding-left: 8px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}

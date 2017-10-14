@@ -1,28 +1,25 @@
 
-  <!-- <view class="background">
-    <view class="be">
-      <view class="view works">
-        <view class="input">
-          <text class="text">作品名称:</text>
-          <input class="border"></input>
-        </view>
-        <view class="input">
-          <text class="text">作品概述:</text>
-          <input class="border"></input>
-        </view>
-        <view class="input">
-          <text class="text">拍摄感悟:</text>
-          <input class="border"></input>
-        </view>
-        <view class="book">
-          <view>
-            <image class="photo" src="{{book}}"></image>
-          </view>
+  <view class="back">
+    <view>
+      <view class="left">
+        <view class="view">
+          <image class="size" src="{{plus}}"/>
         </view>
       </view>
-      <view class="button">
-        <button>上传作品</button>
+      <view class="text">
+        <view class="page">
+          <text>作品名称</text>
+        </view>
+        <input class="input" placeholder="请给你的作品起个名字吧"/>
+      </view>
+      <view class="text">
+        <view class="right">
+          <text>作品描述</text>
+        </view>
+        <textarea class="textarea" placeholder="这一刻你的想法是什么。。。"/>
+      </view>
+      <view class="center">
+        <button class="button">上传作品</button>
       </view>
     </view>
-  </view> -->
-  <view class="background" style="height: {{height}}px;"/>
+  </view>

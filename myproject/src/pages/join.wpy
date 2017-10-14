@@ -1,122 +1,115 @@
 <style>
-.button {
+.size {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: azure;
+  width: 45px;
+  height: 45px;
+  margin: 2.5px;
 }
 
 .view {
   display: flex;
-  width: 300px;
-  height: 450px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid gray;
 }
 
-.be {
+.left {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: azure;
-  height: 100%;
-}
-
-.works {
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
+  margin: 10px;
 }
 
 .text {
   display: flex;
-  padding: 10px;
+  margin-top: 10px;
+}
+
+.page {
+  display: flex;
+  margin: 0px 10px;
+  align-items: center;
+}
+
+.textarea {
+  display: flex;
+  height: 45px;
+  width: 250px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding-left: 10px;
 }
 
 .input {
   display: flex;
-}
-
-.border {
-  display: flex;
   border: 1px solid black;
-  border-radius: 50px;
-  margin-top: 5px;
+  width: 210px;
+  border-radius: 10px;
+  padding-left: 10px;
 }
 
-.book {
+.button {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 25px;
+}
+
+.center {
   display: flex;
-  /* margin-top: 30px; */
   justify-content: center;
 }
 
-.photo {
+.right {
   display: flex;
-  width: 200px;
-  height: 220px;
+  margin: 0px 10px;
 }
 
-.background {
-  background-color: aqua;
+.back {
+  background-image: url('https://img.25pp.com/uploadfile/bizhi/iphone6p/20150922/1442885200389924_390x690.jpg');
+  display: flex;
+  width: 400px;
+  height: 555px;
 }
 </style>
 
 <template>
-  <!-- <view class="background">
-    <view class="be">
-      <view class="view works">
-        <view class="input">
-          <text class="text">作品名称:</text>
-          <input class="border"></input>
-        </view>
-        <view class="input">
-          <text class="text">作品概述:</text>
-          <input class="border"></input>
-        </view>
-        <view class="input">
-          <text class="text">拍摄感悟:</text>
-          <input class="border"></input>
-        </view>
-        <view class="book">
-          <view>
-            <image class="photo" src="{{book}}"></image>
-          </view>
+  <view class="back">
+    <view>
+      <view class="left">
+        <view class="view">
+          <image class="size" src="{{plus}}"></image>
         </view>
       </view>
-      <view class="button">
-        <button>上传作品</button>
+      <view class="text">
+        <view class="page">
+          <text>作品名称</text>
+        </view>
+        <input class="input" placeholder="请给你的作品起个名字吧"></input>
+      </view>
+      <view class="text">
+        <view class="right">
+          <text>作品描述</text>
+        </view>
+        <textarea class="textarea" placeholder="这一刻你的想法是什么。。。"></textarea>
+      </view>
+      <view class="center">
+        <button class="button">上传作品</button>
       </view>
     </view>
-  </view> -->
-  <view class="background" style="height: {{height}}px;"></view>
+  </view>
 </template>
 
 <script>
 import wepy from 'wepy'
 export default class Join extends wepy.page {
   config = {
-    navigationBarTitleText: '我要参赛',
-    backgroundColor: '#66cdaa'
+    navigationBarTitleText: '我要参赛'
   }
   data = {
     src: '',
-    book: '../image/book.jpg',
-    height: 0,
-    width: 0
+    plus: '../image/plus.png'
   }
   methods = {
   }
   onLoad() {
-    let self = this
-
-    wepy.getSystemInfo({
-      success: function(res) {
-        console.log(res)
-        self.height = res.windowHeight
-        self.width = res.windowWidth
-      }
-    })
   }
 }
 </script>
