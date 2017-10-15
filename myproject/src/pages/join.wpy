@@ -31,7 +31,7 @@
 
 .textarea {
   display: flex;
-  height: 45px;
+  height: 70px;
   width: 250px;
   border: 1px solid black;
   border-radius: 10px;
@@ -63,19 +63,56 @@
 }
 
 .back {
-  background-image: url('https://img.25pp.com/uploadfile/bizhi/iphone6p/20150922/1442885200389924_390x690.jpg');
+  background-image: url('https://img.25pp.com/uploadfile/bizhi/iphone6p/20160727/1469588474616338_390x690.jpg');
+  width: 100%;
+}
+
+.radio {
   display: flex;
-  width: 400px;
-  height: 555px;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.image {
+  height: 50px;
+  width: 50px;
 }
 </style>
 
 <template>
-  <view class="back">
+  <view style="height: {{height}}px; width: {{width}}px;" class="back">
     <view>
+      <view>
+        <text>选择主题</text>
+        <view class="section">
+          <view class="section__title">普通选择器</view>
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="picker">
+              当前选择：{{array[index]}}
+            </view>
+          </picker>
+        </view>
+        <view wx:if="{{value}}">
+          <text>{{value}}</text>
+        </view>
+        <radio-group wx:else bindchange="radioChange">
+          <view class="radio">
+            <label wx:for="{{items}}" wx:key="index">
+              <radio value="{{item.name}}" />{{item.value}}
+            </label>
+          </view>
+        </radio-group>
+      </view>
       <view class="left">
+        <block wx:for="{{src}}">
+          <image class="image" src="{{item}}"></image>
+        </block>
         <view class="view">
-          <image class="size" src="{{plus}}"></image>
+          <image class="size" src="{{plus}}" @tap="tap"></image>
         </view>
       </view>
       <view class="text">
@@ -104,12 +141,83 @@ export default class Join extends wepy.page {
     navigationBarTitleText: '我要参赛'
   }
   data = {
-    src: '',
-    plus: '../image/plus.png'
+    src: [],
+    plus: '../image/plus.png',
+    items: [
+      { name: 'live', value: '生活：一组生活照片，反映生活感人的，激情的点滴瞬间。。。' },
+      { name: 'family', value: '亲情：人最重要的感情，和亲人一起的温馨的、甜蜜的照片。。。' },
+      { name: 'flyback', value: '回归：回归自然，自然风景的照片，当然照片中要有人，才算回归，和自然亲昵的照片，人始于自然，也将归与自然。' },
+      { name: 'wind', value: '风雨：人生必然经历风雨，怎样的风雨，如何经历风雨，风雨过后呢？' }
+    ],
+    height: 0,
+    width: 0,
+    value: '',
+    array: ['美国', '中国', '巴西', '日本'],
+    objectArray: [
+      {
+        id: 0,
+        name: '美国'
+      },
+      {
+        id: 1,
+        name: '中国'
+      },
+      {
+        id: 2,
+        name: '巴西'
+      },
+      {
+        id: 3,
+        name: '日本'
+      }
+    ]
   }
   methods = {
+    radioChange(e) {
+      let self = this
+      self.value = e.detail.value
+      console.log('radio发生change事件，携带value值为：', e.detail.value)
+    },
+    tap() {
+      let self = this
+      if (self.src.length >= 3) {
+        wepy.showToast({
+          title: '最多选择三张照片',
+          icon: 'success',
+          duration: 1000
+        })
+        return
+      }
+      wepy.chooseImage({
+        count: 1,
+        sizeType: ['original', 'compressed'],
+        sourceType: ['album', 'camera'],
+        success: function(res) {
+          let arr = self.src
+          arr.push(res.tempFilePaths[0])
+          self.src = arr
+          self.setData({
+            src: arr
+          })
+        }
+      })
+    },
+    bindPickerChange(e) {
+      let self = this
+      console.log('picker发送选择改变，携带值为', e.detail.value)
+      self.setData({
+        index: e.detail.value
+      })
+    }
   }
   onLoad() {
+    let self = this
+    wepy.getSystemInfo({
+      success(res) {
+        self.height = res.windowHeight
+        self.width = res.windowWidth
+      }
+    })
   }
 }
 </script>

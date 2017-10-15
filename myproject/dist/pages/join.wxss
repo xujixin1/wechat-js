@@ -31,7 +31,7 @@
 
 .textarea {
   display: flex;
-  height: 45px;
+  height: 70px;
   width: 250px;
   border: 1px solid black;
   border-radius: 10px;
@@ -63,8 +63,21 @@
 }
 
 .back {
-  background-image: url('https://img.25pp.com/uploadfile/bizhi/iphone6p/20150922/1442885200389924_390x690.jpg');
+  background-image: url('https://img.25pp.com/uploadfile/bizhi/iphone6p/20160727/1469588474616338_390x690.jpg');
+  width: 100%;
+}
+
+.radio {
   display: flex;
-  width: 400px;
-  height: 555px;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.image {
+  height: 50px;
+  width: 50px;
 }
