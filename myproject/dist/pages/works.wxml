@@ -7,4 +7,17 @@
         <image class="border" src="{{search}}"/>
       </view>
     </view>
+    <view class="around">
+      <text bindtap="today" style="color:{{red}}">今日排行</text>
+      <text bindtap="popular" style="color:{{gray}}">人气作品</text>
+      <text bindtap="total" style="color:{{grey}}">总排行</text>
+    </view>
+    <view class="distance">
+      <block  wx:for="{{get}}" wx:key="index">
+        <view class="column">
+          <text class="bottom">{{item.name}}</text>
+          <image class="photo" src="{{item.photo}}" mode="scaleToFill"/>
+        </view>
+      </block>
+    </view>
   </view>

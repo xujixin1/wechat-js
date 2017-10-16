@@ -2,28 +2,17 @@
   <view style="height: {{height}}px; width: {{width}}px;" class="back">
     <view>
       <view>
-        <text>选择主题</text>
-        <view class="section">
-          <view class="section__title">普通选择器</view>
+        <view>
+          <view class="section">选择主题</view>
           <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-            <view class="picker">
+            <view class="section">
               当前选择：{{array[index]}}
             </view>
           </picker>
         </view>
-        <view  wx:if="{{value}}">
-          <text>{{value}}</text>
-        </view>
-        <radio-group  wx:else bindchange="radioChange">
-          <view class="radio">
-            <label wx:for="{{items}}" wx:key="index">
-              <radio value="{{item.name}}"/>{{item.value}}
-            </label>
-          </view>
-        </radio-group>
       </view>
       <view class="left">
-        <block wx:for="{{src}}">
+        <block  wx:for="{{src}}">
           <image class="image" src="{{item}}"/>
         </block>
         <view class="view">

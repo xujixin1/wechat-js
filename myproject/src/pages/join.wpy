@@ -20,7 +20,7 @@
 
 .text {
   display: flex;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .page {
@@ -78,8 +78,13 @@
 }
 
 .image {
-  height: 50px;
-  width: 50px;
+  height: 100px;
+  width: 80px;
+}
+.section {
+  display: flex;
+  padding-top: 10px;
+  padding-left: 10px;
 }
 </style>
 
@@ -87,25 +92,14 @@
   <view style="height: {{height}}px; width: {{width}}px;" class="back">
     <view>
       <view>
-        <text>选择主题</text>
-        <view class="section">
-          <view class="section__title">普通选择器</view>
+        <view>
+          <view class="section">选择主题</view>
           <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-            <view class="picker">
+            <view class="section">
               当前选择：{{array[index]}}
             </view>
           </picker>
         </view>
-        <view wx:if="{{value}}">
-          <text>{{value}}</text>
-        </view>
-        <radio-group wx:else bindchange="radioChange">
-          <view class="radio">
-            <label wx:for="{{items}}" wx:key="index">
-              <radio value="{{item.name}}" />{{item.value}}
-            </label>
-          </view>
-        </radio-group>
       </view>
       <view class="left">
         <block wx:for="{{src}}">
@@ -143,41 +137,30 @@ export default class Join extends wepy.page {
   data = {
     src: [],
     plus: '../image/plus.png',
-    items: [
-      { name: 'live', value: '生活：一组生活照片，反映生活感人的，激情的点滴瞬间。。。' },
-      { name: 'family', value: '亲情：人最重要的感情，和亲人一起的温馨的、甜蜜的照片。。。' },
-      { name: 'flyback', value: '回归：回归自然，自然风景的照片，当然照片中要有人，才算回归，和自然亲昵的照片，人始于自然，也将归与自然。' },
-      { name: 'wind', value: '风雨：人生必然经历风雨，怎样的风雨，如何经历风雨，风雨过后呢？' }
-    ],
     height: 0,
     width: 0,
     value: '',
-    array: ['美国', '中国', '巴西', '日本'],
+    array: ['生活', '亲情', '回归', '风雨'],
     objectArray: [
       {
         id: 0,
-        name: '美国'
+        name: '生活'
       },
       {
         id: 1,
-        name: '中国'
+        name: '亲情'
       },
       {
         id: 2,
-        name: '巴西'
+        name: '回归'
       },
       {
         id: 3,
-        name: '日本'
+        name: '风雨'
       }
     ]
   }
   methods = {
-    radioChange(e) {
-      let self = this
-      self.value = e.detail.value
-      console.log('radio发生change事件，携带value值为：', e.detail.value)
-    },
     tap() {
       let self = this
       if (self.src.length >= 3) {

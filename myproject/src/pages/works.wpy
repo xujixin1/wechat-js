@@ -17,6 +17,43 @@
   display: flex;
   justify-content: center;
 }
+
+.around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.photo {
+  display: flex;
+  flex-direction: row;
+  width: 150px;
+  height: 240px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.bottom {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.distance {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 </style>
 
 <template>
@@ -27,6 +64,19 @@
         </input>
         <image class="border" src="{{search}}"></image>
       </view>
+    </view>
+    <view class="around">
+      <text @tap="today" style="color:{{red}}">今日排行</text>
+      <text @tap="popular" style="color:{{gray}}">人气作品</text>
+      <text @tap="total" style="color:{{grey}}">总排行</text>
+    </view>
+    <view class="distance">
+      <block wx:for="{{get}}" wx:key="index">
+        <view class="column">
+          <text class="bottom">{{item.name}}</text>
+          <image class="photo" src="{{item.photo}}" mode="scaleToFill"></image>
+        </view>
+      </block>
     </view>
   </view>
 </template>
@@ -39,9 +89,35 @@ export default class Works extends wepy.page {
   }
   data = {
     src: '',
-    search: '../image/search.png'
+    search: '../image/search.png',
+    red: 'red',
+    gray: 'gray',
+    grey: 'grey',
+    get: [
+      // { name: '黑丝贼性感', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20150720/1437386706866468_390x690.jpg' },
+      // { name: '露臀就是骚', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/2014/1029/20141029090834470_ios.jpg' },
+      // { name: '性感不是骚'，photo: ''},
+    ]
   }
   methods = {
+    today() {
+      let self = this
+      self.red = 'red'
+      self.gray = 'gray'
+      self.grey = 'grey'
+    },
+    popular() {
+      let self = this
+      self.red = 'grey'
+      self.gray = 'red'
+      self.grey = 'gray'
+    },
+    total() {
+      let self = this
+      self.red = 'gray'
+      self.gray = 'grey'
+      self.grey = 'red'
+    }
   }
   onLoad() { }
 }

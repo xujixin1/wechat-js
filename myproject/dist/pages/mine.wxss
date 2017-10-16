@@ -30,4 +30,15 @@
 .about {
   display: flex;
   margin: 10px;
+  align-items: center;
+  border-bottom: 1px solid grey;
+}
+
+.size {
+  display: flex;
+  width: 25px;
+  height: 25px;
+  justify-content: center;
+  align-items: center;
+  padding-right: 5px;
 }

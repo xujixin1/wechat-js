@@ -30,6 +30,17 @@
 .about {
   display: flex;
   margin: 10px;
+  align-items: center;
+  border-bottom: 1px solid grey;
+}
+
+.size {
+  display: flex;
+  width: 25px;
+  height: 25px;
+  justify-content: center;
+  align-items: center;
+  padding-right: 5px;
 }
 </style>
 
@@ -42,6 +53,19 @@
       <view class="nickname">{{nickName}}</view>
     </view>
     <view class="about">
+      <image class="size" src="{{my}}"></image>
+      <text>我的作品</text>
+    </view>
+    <view class="about">
+      <image class="size" src="{{leave}}"></image>
+      <text>留言面板</text>
+    </view>
+    <view class="about">
+      <image class="size" src="{{history}}"></image>
+      <text>浏览历史</text>
+    </view>
+    <view class="about">
+      <image class="size" src="{{about}}"></image>
       <text @tap="about">关于我们</text>
     </view>
   </view>
@@ -55,7 +79,12 @@ export default class Mine extends wepy.page {
   }
   data = {
     nickName: '',
-    avatarUrl: ''
+    avatarUrl: '',
+    src: '',
+    about: '../image/about.png',
+    history: '../image/history.png',
+    my: '../image/my.png',
+    leave: '../image/leave.png'
   }
   methods = {
     about() {
