@@ -58,7 +58,7 @@
     </view>
     <view class="about">
       <image class="size" src="{{leave}}"></image>
-      <text>留言面板</text>
+      <text @tap="leave">留言面板</text>
     </view>
     <view class="about">
       <image class="size" src="{{history}}"></image>
@@ -91,6 +91,11 @@ export default class Mine extends wepy.page {
       wepy.navigateTo({
         url: './about'
       })
+    },
+    leave() {
+      wepy.navigateTo({
+        url: './leave'
+      })
     }
   }
   onLoad() {
@@ -99,6 +104,10 @@ export default class Mine extends wepy.page {
       success: function(res) {
         self.nickName = res.userInfo.nickName
         self.avatarUrl = res.userInfo.avatarUrl
+        self.setData({
+          avatarUrl: res.userInfo.avatarUrl,
+          nickName: res.userInfo.nickName
+        })
       }
     })
   }

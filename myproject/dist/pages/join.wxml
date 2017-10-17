@@ -12,7 +12,7 @@
         </view>
       </view>
       <view class="left">
-        <block  wx:for="{{src}}">
+        <block  wx:for="{{src}}" wx:key="index">
           <image class="image" src="{{item}}"/>
         </block>
         <view class="view">
