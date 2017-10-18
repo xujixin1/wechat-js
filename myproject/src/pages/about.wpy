@@ -1,10 +1,31 @@
 <style>
+.view {
+  display: flex;
+  border-bottom: 1px solid gray;
+  margin: 10px;
+  align-items: center;
+}
 
+.size {
+  display: flex;
+  width: 25px;
+  height: 25px;
+  justify-content: center;
+  align-items: center;
+  padding-right: 5px;
+}
 </style>
 <template>
   <view>
-    <text>主题内容:</text>
+    <view class="view">
+      <image class="size" src="{{subject}}"></image>
+      <text>主题内容</text>
     </view>
+    <view class="view">
+      <image class="size" src="{{rule}}"></image>
+      <text>活动规则</text>
+    </view>
+  </view>
 </template>
 
 <script>
@@ -14,6 +35,9 @@ export default class About extends wepy.page {
     navigationBarTitleText: '关于我们'
   }
   data = {
+    src: '',
+    subject: '../image/subject.png',
+    rule: '../image/rule.png'
   }
   methods = {
   }

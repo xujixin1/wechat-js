@@ -1,20 +1,81 @@
 <style>
+.idea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+}
 
+.back {
+  background-image: url('https://img.25pp.com/uploadfile/bizhi/iphone6p/2015/0305/20150305093352456_ios.jpg')
+}
+
+.border {
+  border: 1px solid gray;
+  border-radius: 20px;
+  width: 280px;
+  height: 200px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.button {
+  position: fixed;
+  bottom: 0;
+  width: 80px;
+  margin-bottom: 40px;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>
 <template>
-  <view></view>
+  <view class="back" style="height: {{height}}px; width: {{width}}px;">
+    <view class="idea">
+      <text>提出你的意见或建议</text>
+    </view>
+    <view class="center">
+    <textarea class="border">
+    </textarea>
+    </view>
+    <view class="submit">
+    <view class="button">
+    <button>提交</button>
+    </view>
+    </view>
+  </view>
 </template>
 
 <script>
 import wepy from 'wepy'
 export default class Leave extends wepy.page {
   config = {
-    navigationBarTitleText: '留下你想说的'
+    navigationBarTitleText: '意见反馈'
   }
   data = {
+    src: '',
+    height: 0,
+    width: 0
+
   }
   methods = {
   }
-  onLoad() { }
+  onLoad() {
+    let self = this
+    wepy.getSystemInfo({
+      success(res) {
+        self.height = res.windowHeight
+        self.width = res.windowWidth
+      }
+    })
+  }
 }
 </script>
