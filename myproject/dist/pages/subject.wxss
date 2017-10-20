@@ -1,0 +1,9 @@
+
+.textarea {
+  border: 1px dashed gray;
+  border-radius: 20px;
+}
+
+.back {
+  background-image: url('');
+}

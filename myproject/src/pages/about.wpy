@@ -19,7 +19,7 @@
   <view>
     <view class="view">
       <image class="size" src="{{subject}}"></image>
-      <text>主题内容</text>
+      <text @tap="subject">主题内容</text>
     </view>
     <view class="view">
       <image class="size" src="{{rule}}"></image>
@@ -40,6 +40,11 @@ export default class About extends wepy.page {
     rule: '../image/rule.png'
   }
   methods = {
+    subject() {
+      wepy.navigateTo({
+        url: './subject'
+      })
+    }
   }
   onLoad() { }
 }

@@ -22,6 +22,7 @@ export default class extends wepy.app {
       'pages/mine',
       'pages/about',
       'pages/leave',
+      'pages/subject',
       'pages/index'
     ],
     window: {

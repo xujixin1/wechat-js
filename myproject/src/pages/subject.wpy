@@ -1,0 +1,31 @@
+<style>
+.textarea {
+  border: 1px dashed gray;
+  border-radius: 20px;
+}
+
+.back {
+  background-image: url('');
+}
+</style>
+<template>
+  <view>
+      <text>生活</text>
+      <textarea class="textarea" placeholder="一组生活照片，反映生活感人的，激情的点点滴滴。。"></textarea>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Subject extends wepy.page {
+  config = {
+    navigationBarTitleText: '主题详情'
+  }
+  data = {
+  }
+  methods = {
+  }
+  onLoad() {
+  }
+}
+</script>

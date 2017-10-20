@@ -2,7 +2,7 @@
   <view>
     <view class="view">
       <image class="size" src="{{subject}}"/>
-      <text>主题内容</text>
+      <text bindtap="subject">主题内容</text>
     </view>
     <view class="view">
       <image class="size" src="{{rule}}"/>
