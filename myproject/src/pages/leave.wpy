@@ -43,13 +43,13 @@
       <text>提出你的意见或建议</text>
     </view>
     <view class="center">
-    <textarea class="border">
-    </textarea>
+      <textarea class="border">
+      </textarea>
     </view>
     <view class="submit">
-    <view class="button">
-    <button>提交</button>
-    </view>
+      <view class="button">
+        <button>提交</button>
+      </view>
     </view>
   </view>
 </template>

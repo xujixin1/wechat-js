@@ -81,6 +81,7 @@
   height: 100px;
   width: 80px;
 }
+
 .section {
   display: flex;
   padding-top: 10px;
