@@ -11,7 +11,7 @@
   width: 25px;
   height: 25px;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
   padding-right: 5px;
 }
 </style>
@@ -23,7 +23,7 @@
     </view>
     <view class="view">
       <image class="size" src="{{rule}}"></image>
-      <text>活动规则</text>
+      <text @tap="rule">活动规则</text>
     </view>
   </view>
 </template>
@@ -43,6 +43,11 @@ export default class About extends wepy.page {
     subject() {
       wepy.navigateTo({
         url: './subject'
+      })
+    },
+    rule() {
+      wepy.navigateTo({
+        url: './rule'
       })
     }
   }

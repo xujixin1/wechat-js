@@ -1,0 +1,22 @@
+<style>
+</style>
+<template>
+  <view>
+    <text>1.本次大赛为手机摄影作品，手机品牌型号不限；</text>
+    <text></text>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Rule extends wepy.page {
+  config = {
+    navigationBarTitleText: '规则介绍'
+  }
+  data = {
+  }
+  methods = {
+  }
+  onLoad() {}
+}
+</script>

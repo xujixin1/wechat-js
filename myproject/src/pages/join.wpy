@@ -90,7 +90,7 @@
 </style>
 
 <template>
-  <view style="height: {{height}}px; width: {{width}}px;" class="back">
+  <view style="height: {{height}}px; width: {{width}}px; opacity:1.0;" class="back">
     <view>
       <view>
         <view>

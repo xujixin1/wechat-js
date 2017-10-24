@@ -11,6 +11,6 @@
   width: 25px;
   height: 25px;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
   padding-right: 5px;
 }
