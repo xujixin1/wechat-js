@@ -1,0 +1,23 @@
+<style>
+
+</style>
+<template>
+  <view>
+    <text>总会有美好的时刻让你记忆犹新，从创建第一个相册开始</text>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Create extends wepy.page {
+  config = {
+    navigationBarTitleText: '照片集'
+  }
+  data = {
+  }
+  methods = {
+  }
+  onLoad() {
+  }
+}
+</script>
