@@ -1,23 +1,57 @@
 <style>
 .textarea {
-  border: 1px dashed gray;
-  border-radius: 20px;
+  width: 200px;
+  height: 150px;
 }
 
 .back {
-  background-image: url('');
+  display: flex;
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+}
+
+.around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
 }
 </style>
 <template>
   <view>
-    <text>生活</text>
-    <textarea class="textarea" placeholder="一组生活照片，反映生活感人的，激情的点点滴滴。。"></textarea>
-    <text>亲情</text>
-    <textarea class="textarea" placeholder="一组生活照片，反映生活感人的，激情的点点滴滴。。"></textarea>
-    <text>回归</text>
-    <textarea class="textarea" placeholder="一组生活照片，反映生活感人的，激情的点点滴滴。。"></textarea>
-    <text>风雨</text>
-    <textarea class="textarea" placeholder="一组生活照片，反映生活感人的，激情的点点滴滴。。"></textarea>
+    <view class="around">
+      <image class="back" src="{{photo}}"></image>
+      <view class="column">
+        <text>生活</text>
+        <textarea class="textarea" placeholder="一组生活照片，反映生活感人的，激情的点点滴滴。。"></textarea>
+      </view>
+    </view>
+    <view class="around">
+      <image class="back" src="{{photo}}"></image>
+      <view class="column">
+        <text>亲情</text>
+        <textarea class="textarea" placeholder="人最重要的感情，和亲人一起的照片，温馨的、甜蜜的照片。。"></textarea>
+      </view>
+    </view>
+    <view class="around">
+      <image class="back" src="{{photo}}"></image>
+      <view class="column">
+        <text>回归</text>
+        <textarea class="textarea" placeholder="回归自然，自然风景的照片，当然照片中要有人，才算回归，和自然亲昵的照片，人始于自然，也将归与自然。。"></textarea>
+      </view>
+    </view>
+    <view class="around">
+      <image class="back" src="{{photo}}"></image>
+      <view class="column">
+        <text>风雨</text>
+        <textarea class="textarea" placeholder="人生必然经历风雨，怎样的风雨，如何经历风雨，风雨过后呢？"></textarea>
+      </view>
+    </view>
   </view>
 </template>
 
@@ -28,6 +62,8 @@ export default class Subject extends wepy.page {
     navigationBarTitleText: '主题详情'
   }
   data = {
+    src: '',
+    photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/2015/0128/20150128034632461_ios.jpg'
   }
   methods = {
   }

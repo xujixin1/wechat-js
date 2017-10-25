@@ -54,6 +54,21 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+.size {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.margin {
+  display: flex;
+  margin-top: 7px;
+  margin-left: 5px;
+}
 </style>
 
 <template>
@@ -75,6 +90,10 @@
         <view class="column">
           <text class="bottom">{{item.name}}</text>
           <image class="photo" src="{{item.photo}}" mode="scaleToFill"></image>
+          <view class="row">
+          <image class="size" src="{{like}}" @tap="count"></image>
+          <text class="margin">{{number}}</text>
+          </view>
         </view>
       </block>
     </view>
@@ -90,6 +109,7 @@ export default class Works extends wepy.page {
   data = {
     src: '',
     search: '../image/search.png',
+    like: '../image/like.png',
     red: 'red',
     gray: 'gray',
     grey: 'grey',
@@ -106,7 +126,8 @@ export default class Works extends wepy.page {
       { name: '一杯敬过往', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160727/1469582641108518_390x690.jpg' },
       { name: '一杯敬自由', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160717/1468727507287634_390x690.jpg' },
       { name: '一杯敬死亡', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160715/1468545034466164_390x690.jpg' }
-    ]
+    ],
+    number: 0
   }
   methods = {
     today() {
@@ -156,6 +177,10 @@ export default class Works extends wepy.page {
         { name: '一杯敬自由', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160717/1468727507287634_390x690.jpg' },
         { name: '一杯敬死亡', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160715/1468545034466164_390x690.jpg' }
       ]
+    },
+    count() {
+      let self = this
+      self.number++
     }
   }
   onLoad() { }

@@ -1,11 +1,31 @@
 
   <view>
-    <text>生活</text>
-    <textarea class="textarea" placeholder="一组生活照片，反映生活感人的，激情的点点滴滴。。"/>
-    <text>亲情</text>
-    <textarea class="textarea" placeholder="一组生活照片，反映生活感人的，激情的点点滴滴。。"/>
-    <text>回归</text>
-    <textarea class="textarea" placeholder="一组生活照片，反映生活感人的，激情的点点滴滴。。"/>
-    <text>风雨</text>
-    <textarea class="textarea" placeholder="一组生活照片，反映生活感人的，激情的点点滴滴。。"/>
+    <view class="around">
+      <image class="back" src="{{photo}}"/>
+      <view class="column">
+        <text>生活</text>
+        <textarea class="textarea" placeholder="一组生活照片，反映生活感人的，激情的点点滴滴。。"/>
+      </view>
+    </view>
+    <view class="around">
+      <image class="back" src="{{photo}}"/>
+      <view class="column">
+        <text>亲情</text>
+        <textarea class="textarea" placeholder="人最重要的感情，和亲人一起的照片，温馨的、甜蜜的照片。。"/>
+      </view>
+    </view>
+    <view class="around">
+      <image class="back" src="{{photo}}"/>
+      <view class="column">
+        <text>回归</text>
+        <textarea class="textarea" placeholder="回归自然，自然风景的照片，当然照片中要有人，才算回归，和自然亲昵的照片，人始于自然，也将归与自然。。"/>
+      </view>
+    </view>
+    <view class="around">
+      <image class="back" src="{{photo}}"/>
+      <view class="column">
+        <text>风雨</text>
+        <textarea class="textarea" placeholder="人生必然经历风雨，怎样的风雨，如何经历风雨，风雨过后呢？"/>
+      </view>
+    </view>
   </view>

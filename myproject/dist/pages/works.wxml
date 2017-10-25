@@ -17,6 +17,10 @@
         <view class="column">
           <text class="bottom">{{item.name}}</text>
           <image class="photo" src="{{item.photo}}" mode="scaleToFill"/>
+          <view class="row">
+          <image class="size" src="{{like}}" bindtap="count"/>
+          <text class="margin">{{number}}</text>
+          </view>
         </view>
       </block>
     </view>
