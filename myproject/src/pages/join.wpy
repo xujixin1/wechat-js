@@ -1,130 +1,77 @@
 <style>
-.size {
-  display: flex;
-  width: 45px;
-  height: 45px;
-  margin: 2.5px;
+.border {
+  border-bottom: 1px solid gray;
+  margin: 15px;
+  padding-left: 5px;
+}
+
+.textarea {
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 10px;
+}
+
+.plus {
+  width: 50px;
+  height: 50px;
 }
 
 .view {
   display: flex;
-  width: 50px;
-  height: 50px;
-  border: 1px solid gray;
-}
-
-.left {
-  display: flex;
-  margin: 10px;
-}
-
-.text {
-  display: flex;
-  margin-top: 20px;
-}
-
-.page {
-  display: flex;
-  margin: 0px 10px;
+  justify-content: center;
   align-items: center;
-}
-
-.textarea {
-  display: flex;
+  border: 1px solid gray;
+  width: 70px;
   height: 70px;
-  width: 250px;
-  border: 1px solid black;
-  border-radius: 10px;
-  padding-left: 10px;
-}
-
-.input {
-  display: flex;
-  border: 1px solid black;
-  width: 210px;
-  border-radius: 10px;
-  padding-left: 10px;
+  margin: 10px;
 }
 
 .button {
   position: fixed;
   bottom: 0;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
+  background-color: floralwhite;
 }
 
 .center {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.right {
+.wrap {
   display: flex;
-  margin: 0px 10px;
-}
-
-.back {
-  background-image: url('https://img.25pp.com/uploadfile/bizhi/iphone6p/20160727/1469588474616338_390x690.jpg');
-  width: 100%;
-}
-
-.radio {
-  display: flex;
-  flex-direction: column;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .image {
-  height: 100px;
-  width: 80px;
-}
-
-.section {
-  display: flex;
-  padding-top: 10px;
+  width: 100px;
+  height: 120px;
   padding-left: 10px;
 }
 </style>
 
 <template>
-  <view style="height: {{height}}px; width: {{width}}px; opacity:1.0;" class="back">
-    <view>
-      <view>
-        <view>
-          <view class="section">选择主题</view>
-          <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-            <view class="section">
-              当前选择：{{array[index]}}
-            </view>
-          </picker>
-        </view>
-      </view>
-      <view class="left">
-        <block wx:for="{{src}}" wx:key="index">
-          <image class="image" src="{{item}}"></image>
-        </block>
-        <view class="view">
-          <image class="size" src="{{plus}}" @tap="tap"></image>
-        </view>
-      </view>
-      <view class="text">
-        <view class="page">
-          <text>作品名称</text>
-        </view>
-        <input class="input" placeholder="请给你的作品起个名字吧"></input>
-      </view>
-      <view class="text">
-        <view class="right">
-          <text>作品描述</text>
-        </view>
-        <textarea class="textarea" placeholder="这一刻你的想法是什么。。。"></textarea>
-      </view>
-      <view class="center">
-        <button class="button">上传作品</button>
-      </view>
+  <view>
+    <view class="border">
+      <input placeholder="输入作品的名字"></input>
+    </view>
+    <view class="wrap">
+      <block wx:for="{{src}}" wx:key="index">
+        <image class="image" src="{{item}}"></image>
+      </block>
+    </view>
+    <view class="view">
+      <image class="plus" src="{{plus}}" @tap="tap"></image>
+    </view>
+    <view class="textarea">
+      <textarea placeholder="请输入作品描述"></textarea>
+    </view>
+    <view class="center">
+      <button class="button">上传作品</button>
     </view>
   </view>
 </template>
@@ -137,29 +84,7 @@ export default class Join extends wepy.page {
   }
   data = {
     src: [],
-    plus: '../image/plus.png',
-    height: 0,
-    width: 0,
-    value: '',
-    array: ['生活', '亲情', '回归', '风雨'],
-    objectArray: [
-      {
-        id: 0,
-        name: '生活'
-      },
-      {
-        id: 1,
-        name: '亲情'
-      },
-      {
-        id: 2,
-        name: '回归'
-      },
-      {
-        id: 3,
-        name: '风雨'
-      }
-    ]
+    plus: '../image/plus.png'
   }
   methods = {
     tap() {
@@ -173,35 +98,29 @@ export default class Join extends wepy.page {
         return
       }
       wepy.chooseImage({
-        count: 1,
+        count: 3,
         sizeType: ['original', 'compressed'],
         sourceType: ['album', 'camera'],
         success: function(res) {
           let arr = self.src
-          arr.push(res.tempFilePaths[0])
-          self.src = arr
+          let a = arr.concat(res.tempFilePaths)
+          if (a.length > 3) {
+            wepy.showToast({
+              title: '最多选择三张照片',
+              icon: 'success',
+              duration: 1000
+            })
+            return
+          }
+          self.src = a
           self.setData({
-            src: arr
+            src: a
           })
         }
-      })
-    },
-    bindPickerChange(e) {
-      let self = this
-      console.log('picker发送选择改变，携带值为', e.detail.value)
-      self.setData({
-        index: e.detail.value
       })
     }
   }
   onLoad() {
-    let self = this
-    wepy.getSystemInfo({
-      success(res) {
-        self.height = res.windowHeight
-        self.width = res.windowWidth
-      }
-    })
   }
 }
 </script>
