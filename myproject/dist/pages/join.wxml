@@ -1,5 +1,5 @@
 
-  <view>
+  <view class="back" style="height: {{height}}px">
     <view class="border">
       <input placeholder="输入作品的名字"/>
     </view>
@@ -15,6 +15,6 @@
       <textarea placeholder="请输入作品描述"/>
     </view>
     <view class="center">
-      <button class="button">上传作品</button>
+      <button class="button" plain="true" bindtap="set">上传作品</button>
     </view>
   </view>

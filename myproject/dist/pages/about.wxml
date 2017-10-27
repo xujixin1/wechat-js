@@ -1,10 +1,6 @@
 
   <view>
     <view class="view">
-      <image class="size" src="{{subject}}"/>
-      <text bindtap="subject">主题内容</text>
-    </view>
-    <view class="view">
       <image class="size" src="{{rule}}"/>
       <text bindtap="rule">活动规则</text>
     </view>

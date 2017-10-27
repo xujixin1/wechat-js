@@ -91,8 +91,8 @@
           <text class="bottom">{{item.name}}</text>
           <image class="photo" src="{{item.photo}}" mode="scaleToFill"></image>
           <view class="row">
-          <image class="size" src="{{like}}" @tap="count"></image>
-          <text class="margin">{{number}}</text>
+            <image class="size" src="{{like}}" @tap="count"></image>
+            <text class="margin">{{number}}</text>
           </view>
         </view>
       </block>
@@ -127,7 +127,8 @@ export default class Works extends wepy.page {
       { name: '一杯敬自由', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160717/1468727507287634_390x690.jpg' },
       { name: '一杯敬死亡', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160715/1468545034466164_390x690.jpg' }
     ],
-    number: 0
+    number: 0,
+    content: null
   }
   methods = {
     today() {
@@ -182,7 +183,38 @@ export default class Works extends wepy.page {
       let self = this
       self.number++
     }
+    // skip() {
+    //   let self = this
+    //   let item = self.content[e.currentTarget.id]
+    //   console.log(e)
+    //   wepy.navigateTo({
+    //     url: `./describe?name=${item.name}&photo=${item.photo}&number=${item.number}&describe=${item.describe}`
+    //   })
+    // }
   }
-  onLoad() { }
+  onLoad() {
+    // let self = this
+    // self.content = content
+  }
+  onShow() {
+    const _ = require('lodash')
+    let self = this
+    try {
+      var value = wepy.getStorageSync('photo')
+      console.log(value, '1')
+      if (value) {
+        value = _.toArray(value)
+        value = { image: value[0], title: value[1], price: value[2], num: value[3], selected: value[4] }
+        let carts = self.carts
+        carts.push(value)
+        self.carts = carts
+        self.setData({
+          carts: carts
+        })
+      }
+    } catch (e) {
+      // Do something when catch error
+    }
+  }
 }
 </script>

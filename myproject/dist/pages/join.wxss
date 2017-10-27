@@ -1,8 +1,9 @@
 
 .border {
   border-bottom: 1px solid gray;
-  margin: 15px;
+  margin: 0px 15px 15px 15px;
   padding-left: 5px;
+  padding-top: 10px;
 }
 
 .textarea {
@@ -31,7 +32,7 @@
 .button {
   position: fixed;
   bottom: 0;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   background-color: floralwhite;
 }
 
@@ -51,4 +52,8 @@
   width: 100px;
   height: 120px;
   padding-left: 10px;
+}
+
+.back {
+  background-image: url('https://img.25pp.com/uploadfile/bizhi/iphone6p/20150909/1441761087431997_390x690.jpg');
 }
