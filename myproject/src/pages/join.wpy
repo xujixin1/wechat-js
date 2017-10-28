@@ -55,7 +55,7 @@
 }
 
 .back {
-  background-image: url('https://img.25pp.com/uploadfile/bizhi/iphone6p/20150909/1441761087431997_390x690.jpg');
+  background-image: url('https://img.25pp.com/uploadfile/bizhi/iphone6p/20160804/1470273563945101_390x690.jpeg');
 }
 </style>
 
@@ -76,7 +76,7 @@
       <textarea placeholder="请输入作品描述"></textarea>
     </view>
     <view class="center">
-      <button class="button" plain="true" @tap="set">上传作品</button>
+      <button class="button" plain="true">上传作品</button>
     </view>
   </view>
 </template>
@@ -91,7 +91,8 @@ export default class Join extends wepy.page {
     src: [],
     plus: '../image/plus.png',
     height: 0,
-    width: 0
+    width: 0,
+    describe: []
   }
   methods = {
     tap() {
@@ -125,11 +126,6 @@ export default class Join extends wepy.page {
           })
         }
       })
-    },
-    set() {
-      try {
-        wepy.setStorageSync('photo', self.describe)
-      } catch (e) {}
     }
   }
   onLoad() {
@@ -139,7 +135,6 @@ export default class Join extends wepy.page {
         self.height = res.windowHeight
         self.width = res.windowWidth
       }
-
     })
   }
 }

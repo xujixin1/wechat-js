@@ -196,25 +196,5 @@ export default class Works extends wepy.page {
     // let self = this
     // self.content = content
   }
-  onShow() {
-    const _ = require('lodash')
-    let self = this
-    try {
-      var value = wepy.getStorageSync('photo')
-      console.log(value, '1')
-      if (value) {
-        value = _.toArray(value)
-        value = { image: value[0], title: value[1], price: value[2], num: value[3], selected: value[4] }
-        let carts = self.carts
-        carts.push(value)
-        self.carts = carts
-        self.setData({
-          carts: carts
-        })
-      }
-    } catch (e) {
-      // Do something when catch error
-    }
-  }
 }
 </script>

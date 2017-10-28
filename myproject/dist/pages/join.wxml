@@ -15,6 +15,6 @@
       <textarea placeholder="请输入作品描述"/>
     </view>
     <view class="center">
-      <button class="button" plain="true" bindtap="set">上传作品</button>
+      <button class="button" plain="true">上传作品</button>
     </view>
   </view>

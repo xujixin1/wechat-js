@@ -58,7 +58,7 @@
     </view>
     <view class="about">
       <image class="size" src="{{leave}}"></image>
-      <text @tap="leave">留言面板</text>
+      <text>留言面板</text>
     </view>
     <view class="about">
       <image class="size" src="{{history}}"></image>
@@ -66,7 +66,7 @@
     </view>
     <view class="about">
       <image class="size" src="{{about}}"></image>
-      <text @tap="about">关于我们</text>
+      <text>关于我们</text>
     </view>
   </view>
 </template>
@@ -87,16 +87,6 @@ export default class Mine extends wepy.page {
     leave: '../image/leave.png'
   }
   methods = {
-    about() {
-      wepy.navigateTo({
-        url: './about'
-      })
-    },
-    leave() {
-      wepy.navigateTo({
-        url: './leave'
-      })
-    }
   }
   onLoad() {
     let self = this
