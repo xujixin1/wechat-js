@@ -1,0 +1,51 @@
+<style>
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.textarea {
+  display: flex;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  border-radius: 15px;
+  margin: 20px;
+}
+
+.button {
+  position: fixed;
+  bottom: 0;
+  width: 100px;
+  margin-bottom: 20px;
+  background-color: floralwhite;
+}
+</style>
+<template>
+  <view>
+    <view class="center">
+      <text>留下你的意见和建议</text>
+    </view>
+    <view class="textarea">
+      <textarea></textarea>
+    </view>
+    <view class="center">
+      <button class="button">提交</button>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Leave extends wepy.page {
+  config = {
+    navigationBarTitleText: '吐槽在这里'
+  }
+  data = {
+  }
+  methods = {
+  }
+  onLoad() { }
+}
+</script>

@@ -12,7 +12,7 @@
     </view>
     <view class="about">
       <image class="size" src="{{leave}}"/>
-      <text>留言面板</text>
+      <text bindtap="leave">留言面板</text>
     </view>
     <view class="about">
       <image class="size" src="{{history}}"/>

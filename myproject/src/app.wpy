@@ -20,6 +20,7 @@ export default class extends wepy.app {
       'pages/join',
       'pages/works',
       'pages/mine',
+      'pages/leave',
       'pages/index'
     ],
     window: {
