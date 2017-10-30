@@ -1,5 +1,5 @@
 
-  <view>
+  <view class="back" style="height:{{height}}px">
     <view class="center">
       <text>留下你的意见和建议</text>
     </view>

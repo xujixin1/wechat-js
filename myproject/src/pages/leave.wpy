@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  padding: 30px 20px 50px 20px;
 }
 
 .textarea {
@@ -18,12 +18,16 @@
   position: fixed;
   bottom: 0;
   width: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   background-color: floralwhite;
+}
+
+.back {
+  background-image: url('https://img.25pp.com/uploadfile/bizhi/iphone6p/20160701/1467335815143210_390x690.jpg')
 }
 </style>
 <template>
-  <view>
+  <view class="back" style="height:{{height}}px">
     <view class="center">
       <text>留下你的意见和建议</text>
     </view>
@@ -43,9 +47,19 @@ export default class Leave extends wepy.page {
     navigationBarTitleText: '吐槽在这里'
   }
   data = {
+    height: 0,
+    width: 0
   }
   methods = {
   }
-  onLoad() { }
+  onLoad() {
+    let self = this
+    wepy.getSystemInfo({
+      success(res) {
+        self.height = res.windowHeight
+        self.width = res.windowWidth
+      }
+    })
+  }
 }
 </script>
