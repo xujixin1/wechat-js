@@ -1,0 +1,97 @@
+<style>
+.view {
+  display: flex;
+  justify-content: space-around;
+  align-items: space-around;
+  padding-top: 10px;
+  color: gray;
+}
+
+.border {
+  border-bottom: 2px solid gray;
+  width: 20px;
+  margin-top: 5px;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  display: flex;
+  margin-top: 10px;
+  width: 100%
+}
+
+.height {
+  height: 400px;
+}
+
+.back {
+  background-color: black;
+}
+
+.white {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  color: white;
+}
+
+.gray {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+  color: gray;
+}
+</style>
+
+<template>
+  <view class="back">
+    <view class="view">
+      <view class="center">
+        <text>总排行</text>
+        <view class="border"></view>
+      </view>
+      <view class="center">
+        <text>人气作品</text>
+        <view class="border"></view>
+      </view>
+      <view class="center">
+        <text>今日排行</text>
+        <view class="border"></view>
+      </view>
+    </view>
+    <view class="height">
+      <image class="image" src="{{animal}}"></image>
+      <view class="white">
+        <text>Look,deer</text>
+      </view>
+      <view class="gray">
+        <text>#软泥怪uzy</text>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Work extends wepy.page {
+  config = {
+    navigationBarTitleText: '作品一览'
+  }
+  data = {
+    src: '',
+    animal: 'http://mpic.tiankong.com/31e/a1b/31ea1bf808b4e1114d6da1b71b391831/640.jpg'
+  }
+  methods = {
+  }
+  onLoad() {
+  }
+}
+</script>

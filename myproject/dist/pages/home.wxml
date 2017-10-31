@@ -1,10 +1,12 @@
 
-  <view class="view">
-    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="2000" duration="300" circular="true">
-      <block  wx:for="{{sight}}" wx:key="index">
-        <swiper-item>
-          <image src="{{item}}" class="sight"/>
-        </swiper-item>
-      </block>
-    </swiper>
+  <view class="black" style="height:{{height}}px">
+    <view class="view">
+      <swiper class="swiper">
+        <block  wx:for="{{sight}}" wx:key="index">
+          <swiper-item>
+            <image src="{{item}}" class="sight"/>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
   </view>

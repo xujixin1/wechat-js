@@ -1,0 +1,26 @@
+
+  <view class="back">
+    <view class="view">
+      <view class="center">
+        <text>总排行</text>
+        <view class="border"/>
+      </view>
+      <view class="center">
+        <text>人气作品</text>
+        <view class="border"/>
+      </view>
+      <view class="center">
+        <text>今日排行</text>
+        <view class="border"/>
+      </view>
+    </view>
+    <view class="height">
+      <image class="image" src="{{animal}}"/>
+      <view class="white">
+        <text>Look,deer</text>
+      </view>
+      <view class="gray">
+        <text>#软泥怪uzy</text>
+      </view>
+    </view>
+  </view>

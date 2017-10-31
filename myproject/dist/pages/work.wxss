@@ -1,0 +1,51 @@
+
+.view {
+  display: flex;
+  justify-content: space-around;
+  align-items: space-around;
+  padding-top: 10px;
+  color: gray;
+}
+
+.border {
+  border-bottom: 2px solid gray;
+  width: 20px;
+  margin-top: 5px;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  display: flex;
+  margin-top: 10px;
+  width: 100%
+}
+
+.height {
+  height: 400px;
+}
+
+.back {
+  background-color: black;
+}
+
+.white {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  color: white;
+}
+
+.gray {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+  color: gray;
+}
