@@ -8,7 +8,6 @@
 }
 
 .border {
-  border-bottom: 2px solid gray;
   width: 20px;
   margin-top: 5px;
 }
@@ -22,12 +21,11 @@
 
 .image {
   display: flex;
-  margin-top: 10px;
   width: 100%
 }
 
 .height {
-  height: 400px;
+  height: 350px;
 }
 
 .back {
@@ -48,32 +46,90 @@
   align-items: center;
   margin-top: 8px;
   color: gray;
+  font-size: 14px;
+}
+
+.solid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  background-color: aqua;
+  height: 25px;
+  width: 100px;
+  font-size: 15px;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.position {
+  position: absolute;
+  margin-top: 15px;
+  right: 0px;
+  border: 1px solid white;
+  background-color: white;
+  font-size: 13px;
+  width: 70px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.5;
+}
+
+.head {
+  border: 5px solid black;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.right {
+  position: absolute;
+  right: 10px;
+  top: 250px;
 }
 </style>
 
 <template>
   <view class="back">
     <view class="view">
-      <view class="center">
-        <text>总排行</text>
-        <view class="border"></view>
+      <view class="center" @tap="total">
+        <text style="color:{{white}}">总排行</text>
+        <view class="border" style="border-bottom: 3px solid {{whiteone}}"></view>
       </view>
-      <view class="center">
-        <text>人气作品</text>
-        <view class="border"></view>
+      <view class="center" @tap="popular">
+        <text style="color:{{gray}}">人气作品</text>
+        <view class="border" style="border-bottom: 3px solid {{black}}"></view>
       </view>
-      <view class="center">
-        <text>今日排行</text>
-        <view class="border"></view>
+      <view class="center" @tap="today">
+        <text style="color:{{grey}}">今日排行</text>
+        <view class="border" style="border-bottom: 3px solid {{dark}}"></view>
       </view>
     </view>
     <view class="height">
+      <view class="position">
+        <text>30 收藏者</text>
+      </view>
       <image class="image" src="{{animal}}"></image>
       <view class="white">
         <text>Look,deer</text>
       </view>
+      <view class="right">
+        <image class="head" src="{{head}}"></image>
+      </view>
       <view class="gray">
         <text>#软泥怪uzy</text>
+      </view>
+      <view class="text">
+        <view class="solid">
+          <text>+收藏</text>
+        </view>
       </view>
     </view>
   </view>
@@ -87,9 +143,43 @@ export default class Work extends wepy.page {
   }
   data = {
     src: '',
-    animal: 'http://mpic.tiankong.com/31e/a1b/31ea1bf808b4e1114d6da1b71b391831/640.jpg'
+    animal: 'http://mpic.tiankong.com/31e/a1b/31ea1bf808b4e1114d6da1b71b391831/640.jpg',
+    head: 'http://img0.imgtn.bdimg.com/it/u=814104885,3650636077&fm=27&gp=0.jpg',
+    white: 'white',
+    gray: 'gray',
+    grey: 'grey',
+    whiteone: 'white',
+    black: 'black',
+    dark: 'black'
   }
   methods = {
+    total() {
+      let self = this
+      self.white = 'white'
+      self.gray = 'gray'
+      self.grey = 'grey'
+      self.whiteone = 'white'
+      self.black = 'black'
+      self.dark = 'black'
+    },
+    popular() {
+      let self = this
+      self.white = 'gray'
+      self.gray = 'white'
+      self.grey = 'grey'
+      self.whiteone = 'black'
+      self.black = 'white'
+      self.dark = 'black'
+    },
+    today() {
+      let self = this
+      self.white = 'grey'
+      self.gray = 'gray'
+      self.grey = 'white'
+      self.black = 'black'
+      self.whiteone = 'black'
+      self.dark = 'white'
+    }
   }
   onLoad() {
   }
