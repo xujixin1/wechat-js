@@ -1,7 +1,0 @@
-
-  <view>
-    <view class="view">
-      <image class="size" src="{{rule}}"/>
-      <text bindtap="rule">活动规则</text>
-    </view>
-  </view>

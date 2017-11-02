@@ -19,7 +19,7 @@ export default class extends wepy.app {
       'pages/home',
       'pages/take',
       'pages/work',
-      'pages/mine',
+      'pages/myself',
       'pages/leave',
       'pages/index'
     ],
@@ -49,7 +49,7 @@ export default class extends wepy.app {
         iconPath: './image/iconjoin.png',
         selectedIconPath: './image/joinone.png'
       }, {
-        pagePath: 'pages/mine',
+        pagePath: 'pages/myself',
         text: '个人信息',
         iconPath: './image/iconmine.png',
         selectedIconPath: './image/mineone.png'
